@@ -42,3 +42,15 @@ The term, $\sigma^2$, is given the name **variance** which represents the power 
 By definition, the standrd deviation measures the **AC** portion of a signal while the **RMS* values measures both the *AC* and *DC* components. If a signal has no DC component, its RMS value is identical to the standard deviation. Here is a representation of the relationship between standard deviation and peak-to-peak value of common waveforms.
 
 ![Common Waveforms with their standard deviation value](std_waveform.png)
+
+While the method of the variance equation is used for running statistics, it is not efficient when translated to computer code. A solution to this problem is to use this equation:
+$$
+\sigma ^2 = \frac{1}{N-1} [\sum_{i=0}^{N-1}x_i^2 - \frac{1}{N}(\sum_{i=0}^{N-1}x_i)^2]
+$$
+
+While moving through the signal, some parameters are recorded:
+1. Number of Samples
+2. The sum of these samples
+3. The sum of the squares of the samples
+These parameters have been recorded to calculate the mean and standard deviation using the current value of these three parameters.
+In some situations, the *mean* describes what is being measured, while the *standard deviation* represents noise and other interference.
