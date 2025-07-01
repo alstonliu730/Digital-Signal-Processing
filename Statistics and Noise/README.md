@@ -49,8 +49,22 @@ $$
 $$
 
 While moving through the signal, some parameters are recorded:
-1. Number of Samples
+1. Number of samples
 2. The sum of these samples
 3. The sum of the squares of the samples
+
 These parameters have been recorded to calculate the mean and standard deviation using the current value of these three parameters.
 In some situations, the *mean* describes what is being measured, while the *standard deviation* represents noise and other interference.
+
+## Signal vs. Underlying Process
+**Statistics** is the science of interpreting *numerical data* and in comparison **probability** is used in DSP to understand the *processes* that generate signals. Although they are closely related, the distinction between the **acquired signal** and the **underlying process** is key to many DSP techniques.
+
+
+When flipping a coin 1000 times, the mean won't always be at 0.5. Random chance will create results that are slightly different each time. Even if *probability* is constant, the *statistics* of the acquired signal change each time the experiment is repeated. This is called **statistical variation/fluctuation/noise**.
+
+For random signals, the typical error between the mean of the *N* points, and the mean of the underlying process, is given by:
+$$
+\text{Typical Error} = \frac{\sigma}{\sqrt{N}}
+$$
+
+If *N* is small, the noise in the calculated mean will be very large. In other words, you do not have access to enough data to properly characterize the process. The larger the value of *N*, the smaller the expected error will become. According to the *Strong Law of Large Numbers*, it guarantees that the error becomes zero as *N* approaches infinity.
