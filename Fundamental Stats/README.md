@@ -114,3 +114,27 @@ We can see the effects of the mean and standard deviation to the distribution cu
 The **cumulative distribution function (cdf)** is going to be the integral of the distribution between a range of values. It uses the upper-case Greek symbol *phi* $\Phi$. For example, $\Phi(1) = 0.038$ means that there's a 3.8% probability that the value of the signal will be between $-\infty$ to two *standard deviation* below the *mean* at any given time. To figure out the probability that the signal will be between two *values* is to subtract the appropriate numbers in $\Phi(x)$ table. The probability of a signal is gonna be between 1 standard deviation and two standard deviation away from the mean is:
 $\Phi(1) - \Phi(-2) = 0.8413$ means it will be 84.13%.
 
+## Digital Noise Generation
+In signal processing, we will discuss much about random noise. It is also important to discuss **random number generators**. Many languages will have its own *pseudo-random* number generator. This means the numbers are already *pre-determined* using a **seed** value. A random number generator can get a random number using this seed resulting in a new number between 0 and 1:
+$$
+R = (aS + b)\mod {c}
+$$
+
+In most cases, we can observe that when random signals come together, they usually will have a Gaussian distribution. In the figure below we can see that as we add two random signals indicated as $X = RND + RND$. 
+
+![Random number signals and their pdfs](assets/rnd-distribution.png)
+
+We see in the first graph $X = RND$. Its mean is 0.5 and the standard deviation is $\frac{1}{\sqrt{12}}$ and its distribution is *uniform* between 0 & 1.
+As we add a second random nature to the first signal, we see that the mean increases to *1.0* since each random number can go from 0 to 1 and the sum can go from 0 to 2. The standard deviation changed to $\frac{1}{\sqrt{6}}$ because when independent random signals are added, its variance are also added. We can see the distribution changed from an uniform distribution to a triangular distribution. When we take this a step further, we see that this changes to a bell-shaped curve or a *Gaussian Distribution*. This is called the **Central Limit Theorem** which states a sum of random numbers becomes normally distributed as more and more of the random numbers are added together. It explains why we see so many examples of these in nature.
+
+In the second method we can create a normal distribution equation using $R_1$ and $R_2$:
+$$
+X = (-2 \log{R_1})^{1/2} cos(2\pi R_2)
+$$
+
+## Precision and Accuracy
+Here we will define some terms that are used to describe methods or systems. The **true value** or the **truth** is the actual value of a signal.
+
+A **measured value** is the value obtained by the signal and you would want the measured value to be as close to the true value. The *precision* and *accuracy* is based on the errors between these two values. As an example, let's say we send a sonic wave into the ocean. Sound waves mostly travel at a constant speed in the water which makes surveying easier using the elapsed time it takes for the signal to return. However, there can be noise from different sources: random noise, waves on ocean surface or animals swimming. 
+
+We can investigate these measurements by taking readings that are *exactly* 1000 meters deep and set that as our *true value*. we can plot these values on a histogram. First the mean may be shifted from the true value. This shift is called **accuracy** of the measurement. In
