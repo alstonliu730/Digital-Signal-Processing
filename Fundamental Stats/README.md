@@ -98,3 +98,19 @@ A problem that can occur is when calculating the histogram the number of levels 
 Deciding how many bins should be used is a compromise. Too many bins makes it difficult to estimate *amplitude* of the underlying pmf and too few bins makes it difficult to estimate the underlying pmf in the *horizontal* direction. You can see an example from this:
 
 ![Demonstration of the number of bins affecting the histogram](assets/hist-bins.png)
+
+## The Normal Distribution
+Most random signals will have a bell-shaped curve in its *pdf*. This can be called **Normal Distribution**, a **Gauss Distribution**, or a **Gaussian**.
+
+The basic shape of the curve is generated from a *negative squared exponent* but adding the mean and standard deviation gives a general equation for the distribution. Note that the total area under the curve is equal to *one*:
+$$
+P(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{\frac{-(x-\mu)^2}{2\sigma^2}}
+$$
+
+We can see the effects of the mean and standard deviation to the distribution curve. The *mean* will control where the center of the curve is at while the *standard deviation* will control how wide the bell shape goes. 
+
+![Graphs of different Gaussian curves by changing mean and/or standard deviation](assets/gaussian-curves.png)
+
+The **cumulative distribution function (cdf)** is going to be the integral of the distribution between a range of values. It uses the upper-case Greek symbol *phi* $\Phi$. For example, $\Phi(1) = 0.038$ means that there's a 3.8% probability that the value of the signal will be between $-\infty$ to two *standard deviation* below the *mean* at any given time. To figure out the probability that the signal will be between two *values* is to subtract the appropriate numbers in $\Phi(x)$ table. The probability of a signal is gonna be between 1 standard deviation and two standard deviation away from the mean is:
+$\Phi(1) - \Phi(-2) = 0.8413$ means it will be 84.13%.
+
