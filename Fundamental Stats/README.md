@@ -137,4 +137,8 @@ Here we will define some terms that are used to describe methods or systems. The
 
 A **measured value** is the value obtained by the signal and you would want the measured value to be as close to the true value. The *precision* and *accuracy* is based on the errors between these two values. As an example, let's say we send a sonic wave into the ocean. Sound waves mostly travel at a constant speed in the water which makes surveying easier using the elapsed time it takes for the signal to return. However, there can be noise from different sources: random noise, waves on ocean surface or animals swimming. 
 
-We can investigate these measurements by taking readings that are *exactly* 1000 meters deep and set that as our *true value*. we can plot these values on a histogram. First the mean may be shifted from the true value. This shift is called **accuracy** of the measurement. In
+We can investigate these measurements by taking readings that are *exactly* 1000 meters deep and set that as our *true value*. we can plot these values on a histogram. First the mean may be shifted from the true value. This shift is called **accuracy** of the measurement. In individual measurements may not agree well with each other like the width of the distribution. This would be the **precision** of the measurement and it's expressed by quoting the standard deviation, the signal-to-noise ratio or the CV.
+
+**Random errors** are errors that change each time the measurement is repeated and the precision is a measure of random noise.
+
+**Systematic errors** are errors that become repeated when repeating experiments. Accuracy is usually dependent on how you *calibrate* the system. 
