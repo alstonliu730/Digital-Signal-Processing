@@ -122,7 +122,7 @@ $$
 
 In most cases, we can observe that when random signals come together, they usually will have a Gaussian distribution. In the figure below we can see that as we add two random signals indicated as $X = RND + RND$. 
 
-![Random number signals and their pdfs](assets/rnd-distribution.png)
+![Random number signals and their PDFs](assets/rnd-distribution.png)
 
 We see in the first graph $X = RND$. Its mean is 0.5 and the standard deviation is $\frac{1}{\sqrt{12}}$ and its distribution is *uniform* between 0 & 1.
 As we add a second random nature to the first signal, we see that the mean increases to *1.0* since each random number can go from 0 to 1 and the sum can go from 0 to 2. The standard deviation changed to $\frac{1}{\sqrt{6}}$ because when independent random signals are added, its variance are also added. We can see the distribution changed from an uniform distribution to a triangular distribution. When we take this a step further, we see that this changes to a bell-shaped curve or a *Gaussian Distribution*. This is called the **Central Limit Theorem** which states a sum of random numbers becomes normally distributed as more and more of the random numbers are added together. It explains why we see so many examples of these in nature.
